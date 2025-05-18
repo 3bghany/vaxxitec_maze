@@ -134,6 +134,9 @@ body, html {
     z-index: 1000;
     font-weight: 600;
 }
+.score-img{
+        width: 80px;
+    }
 
 /* Media Queries for different devices */
 
@@ -159,3 +162,5 @@ body, html {
         height: 50vh; /* Decrease height for mobile */
     }
 }
+
+

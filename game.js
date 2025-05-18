@@ -12,7 +12,7 @@ let player = { x: 680, y: 420, width: 20, height: 20 ,imageWidth: 45,imageHeight
 let playerImage = new Image();
 playerImage.src = 'imgs/chickenv1.png'; // Replace with the path to your image
 const coinImage = new Image();
-coinImage.src = "imgs/onehvt.png";
+coinImage.src = "imgs/hvt.webp";
 let coinCounter=0;
 let joyAvailable=true;
 
@@ -33,7 +33,6 @@ function collectCoin(playerX, playerY) {
             playerY < coin.y + 20 && playerY + player.height+20 > coin.y) {
             coin.collected = true;
             showPopup(coin.message,coin.answer); // Show the message associated with the coin
-            updateScore(10); // Increase score when coin is collected
             coinCounter++;
             drawPlayer(coinCounter);
         }
@@ -130,6 +129,7 @@ function showPopup(message,answer) {
     btntrue.addEventListener("click", () => {
         if(answer == "true") {
             btntrue.classList.add("correct")
+            updateScore(10);
         } else{
             btntrue.classList.add("wrong");
             btnfalse.classList.add("correct");
@@ -140,6 +140,7 @@ function showPopup(message,answer) {
     btnfalse.addEventListener("click", () => {
         if(answer == "false") {
             btnfalse.classList.add("correct")
+            updateScore(10);
         } else{
             btnfalse.classList.add("wrong");
             btntrue.classList.add("correct");
@@ -239,14 +240,14 @@ function drawCoins() {
             // Brighter border (glow effect)
             ctx.save();
             ctx.shadowBlur = 20;
-            ctx.shadowColor = "#ffff66"; // Bright yellow glow
-            ctx.drawImage(coinImage, coin.x - 5, coin.y - 25 + bounce, 20, 50);
+            ctx.shadowColor = "#732579"; // Bright yellow glow
+            ctx.drawImage(coinImage, coin.x - 35, coin.y - 25 + bounce, 80, 60);
             ctx.restore();
 
             // Optional: draw a circular border
             ctx.beginPath();
             ctx.arc(coin.x + 5, coin.y + bounce, 30, 0, Math.PI * 2);
-            ctx.strokeStyle = "#fff000"; // Bright stroke
+            ctx.strokeStyle = "#732579"; // Bright stroke
             ctx.lineWidth = 2;
             ctx.stroke();
         }
