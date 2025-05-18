@@ -1,0 +1,161 @@
+/* General styling for the body and game layout */
+/* General styling for the body and game layout */
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: #732579;
+/*     background-image: url('imgs/background.jpg'); */
+/*     background-repeat: repeat; */
+/*     background-size:cover; */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Responsive Game Container */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);    
+}
+
+/* Responsive Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Use full width of the container */
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Responsive Timer and Score */
+.timer, .score, .username {
+    font-weight: bold;
+}
+.timer{
+    background-color: #b7b4b4;
+    border-radius: 40%;
+    border: #d2691e dashed 2px;
+    padding: 3px 10px;
+}
+
+/* Responsive Canvas */
+#mazeCanvas {
+    border: 2px solid #000;
+    margin-top: 10px;
+    width: 100%;  /* Use full width of the container */
+    height: 80vh; /* Use viewport height for better scaling */
+}
+
+/* Popup Styling */
+.popup {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 40%;
+    background-color: orange;
+    border: 2px solid #000;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn {
+    background-color: #732579;
+    border: 1px solid #732579;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #c425cf;
+    border-color: #732579;
+}
+
+.btn.correct {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.btn.wrong {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* Hidden class to hide the popup */
+.hidden {
+    display: none;
+}
+
+.popup.visible {
+    opacity: 1;
+    display: block;
+}
+.my-popup{
+    position :fixed;
+    display: grid;
+    top : 40%;
+    left : 40%;
+    width : 40%;
+    padding : 20px;
+    background-color : white;
+    border : 2px solid #000;
+    color : #000000;
+    text-align : center;
+    border-radius : 10px;
+    font-family : Arial, sans-serif;
+    z-index: 1000;
+    font-weight: 600;
+}
+
+/* Media Queries for different devices */
+
+/* For tablets and iPads */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .game-container {
+        width: 90%; /* Adjust width */
+    }
+
+    #mazeCanvas {
+        height: 40vh; /* Increase height for tablets */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Stack header elements */
+        align-items: center;
+        font-size: 1rem;
+    }
+    #mazeCanvas {
+        height: 50vh; /* Decrease height for mobile */
+    }
+}

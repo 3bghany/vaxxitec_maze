@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container" width="200" height="300">
+        <div class="header">
+            <div class="timer"><span id="time">00:00</span></div>
+            <div class="username"><span id="playerName"></span></div> <!-- Added Player Name -->
+            <div class="score"><span id="score">0</span></div>
+        </div>
+        <canvas id="mazeCanvas" width="740" height="450"></canvas>
+    </div>
+
+    
+    <script src='virtualjoystick.js'></script>
+    <script src="game.js" defer></script>
+</body>
+
+</html>
